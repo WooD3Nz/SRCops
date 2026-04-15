@@ -37,5 +37,16 @@ pipeline {
                 '''
             }
         }
+        stage('test create container') {
+            steps {
+                sh '''
+                    docker image ls
+                    docker pull ubuntu/apache2
+                    docker pull run -d --name container01 --container01 ubuntu/apache2
+                    docker ps
+     
+                '''
+            }
+        }
     }
 }
