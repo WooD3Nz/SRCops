@@ -6,7 +6,7 @@ pipeline {
                 cleanWs()
             }
         }
-    stage('checkout SCM') {
+        stage('checkout SCM') {
             steps {
                // sh "git clone https://github.com/WooD3Nz/SRCops.git"
                 git branch: 'main', credentialsId: 'admin', url: 'https://github.com/WooD3Nz/SRCops.git'
