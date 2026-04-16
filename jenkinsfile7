@@ -19,10 +19,10 @@ pipeline {
                     docker stop contapache01 && docker rm -f contapache01
                     docker run -d --name contapache01 --hostname contapache01 -v ./volumecontapache01:/var/www/html --network macvlan192 --ip 192.168.10.20 mon-apache2:latest
                     docker ps
-                    //docker exec contapache01 "ifconfig"
-                    //docker exec contapache01 /etc/init.d/ssh status
-                    //docker exec contapache01 /etc/init.d/apache2 start
-                    //docker exec contapache01 /etc/init.d/apache2 status
+                    #docker exec contapache01 "ifconfig"
+                    #docker exec contapache01 /etc/init.d/ssh status
+                    #docker exec contapache01 /etc/init.d/apache2 start
+                    #docker exec contapache01 /etc/init.d/apache2 status
                 '''
             }
         }
