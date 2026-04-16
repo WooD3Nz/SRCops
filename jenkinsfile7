@@ -21,7 +21,7 @@ pipeline {
                     docker ps
                     #docker exec contapache01 "ifconfig"
                     #docker exec contapache01 /etc/init.d/ssh status
-                    #docker exec contapache01 /etc/init.d/apache2 start
+                    docker exec contapache01 /etc/init.d/apache2 start
                     #docker exec contapache01 /etc/init.d/apache2 status
                 '''
             }
