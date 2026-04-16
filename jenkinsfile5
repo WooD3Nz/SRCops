@@ -16,7 +16,7 @@ pipeline {
         stage('create macvlan192') {
             steps {
                 sh '''
-                    docker rm macvlan192
+                    docker network rm macvlan192
                     docker network create -d macvlan --subnet=192.168.10.0/24 --gateway=192.168.10.254 -o parent=ens33 macvlan192
                     docker network ls
                     docker inspect macvlan192
