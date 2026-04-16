@@ -6,7 +6,7 @@ pipeline {
                 cleanWs()
             }
         }
-    stage('checkout SCM') {
+        stage('checkout SCM') {
             steps {
                // sh "git clone https://github.com/WooD3Nz/SRCops.git"
                 git branch: 'main', credentialsId: 'admin', url: 'https://github.com/WooD3Nz/SRCops.git'
@@ -34,6 +34,17 @@ pipeline {
                     sudo usermod -aG docker $USER
                     
                     sudo docker run hello-world
+                '''
+            }
+        }
+        stage('test create container') {
+            steps {
+                sh '''
+                    docker image ls
+                    docker pull ubuntu/apache2
+                    docker run -d --name container01 --hostname container01 ubuntu/apache2
+                    docker ps
+     
                 '''
             }
         }
