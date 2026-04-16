@@ -29,7 +29,7 @@ pipeline {
         stage('copy-fichiers-mysite') {
             steps {
                 sh '''
-                   sudo cp -r ./mysite/. contapache01:/var/www/html/
+                   docker cp ./mysite/. contapache01:/var/www/html/
                    docker exec contapache01 ls -la /var/www/html 
                 '''
             }
